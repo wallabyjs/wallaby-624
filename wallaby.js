@@ -29,7 +29,13 @@ module.exports = function (wallaby) {
             wallaby.delayStart();
 
             System.config({
-                defaultJSExtensions: true
+                defaultJSExtensions: true,
+                transpiler: 'none',
+                meta: {
+                    '*': {
+                        scriptLoad: true
+                    }
+                }
             });
 
             var promises = [];
